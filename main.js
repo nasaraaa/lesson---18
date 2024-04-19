@@ -39,13 +39,14 @@ slides[currentSlide].classList.add("active");
 
 let sliderIntervalId = null;
 
+sliderIntervalId = setInterval(goToNextSlide,30000);
+
 
 slidesWrapper.addEventListener("mouseenter",()=>{
-    sliderIntervalId = setInterval(goToNextSlide, 5000);
+    sliderIntervalId=setInterval(goToNextSlide,4000);
     console.log("nasara")
-})
-
-slidesWrapper.addEventListener("mouseleave", () => {
-	clearInterval()
 });
 
+slidesWrapper.addEventListener("mouseleave",()=>{
+    clearInterval(sliderIntervalId)
+})
